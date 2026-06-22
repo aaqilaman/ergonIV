@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERGON - Access</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background: #0a0a0a; color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        
+        .auth-card { background: #141414; width: 900px; height: 500px; display: flex; border: 1px solid #262626; border-radius: 12px; overflow: hidden; }
+        
+        /* Left/Right Panels */
+        .image-side { flex: 1; background-size: cover; background-position: center; }
+        .login-bg { background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2'); }
+        .signup-bg { background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1'); }
+        
+        .form-side { flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+        
+        /* Logo Styling */
+        /* Logo Styling - Updated for Size and Centering */
+.logo-container { 
+    margin-bottom: 2rem; 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; /* This moves them to the middle */
+    align-items: center; 
+}
+
+.logo-container img { 
+    height: 65px; /* Increased size */
+    width: auto; 
+    object-fit: contain; 
+}
+        
+        input { width: 100%; padding: 0.8rem; margin-bottom: 1rem; background: #0a0a0a; border: 1px solid #333; color: white; border-radius: 4px; }
+        button { width: 100%; padding: 0.8rem; background: white; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; margin-top: 1rem; color: black; }
+        
+        .hidden { display: none; }
+        .toggle-link { color: #a3a3a3; font-size: 0.8rem; text-align: center; margin-top: 1rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <!-- Login View -->
+        <div id="login-panel" class="image-side login-bg"></div>
+        <div id="login-form" class="form-side">
+            <div class="logo-container">
+                <img src="Picture2.png" alt="Ergon Logo"> <!-- Ergon -->
+                <img src="Picture1.png" alt="Kingswood Logo"> <!-- Kingswood -->
+            </div>
+            <h2>Login</h2>
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <button>Login</button>
+            <p class="toggle-link" onclick="toggleAuth()">New to ERGON? Sign Up</p>
+        </div>
+
+        <!-- Signup View -->
+        <div id="signup-form" class="form-side hidden">
+            <div class="logo-container">
+                <img src="Picture2.png" alt="Ergon Logo">
+                <img src="Picture1.png" alt="Kingswood Logo">
+            </div>
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password Confirmation">
+            <button>Create Account</button>
+            <p class="toggle-link" onclick="toggleAuth()">Already have an account? Login</p>
+        </div>
+        <div id="signup-panel" class="image-side signup-bg hidden"></div>
+    </div>
+
+    <script>
+        function toggleAuth() {
+            document.getElementById('login-panel').classList.toggle('hidden');
+            document.getElementById('login-form').classList.toggle('hidden');
+            document.getElementById('signup-form').classList.toggle('hidden');
+            document.getElementById('signup-panel').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
